@@ -1,7 +1,7 @@
 name: basic
 on: [push]
 jobs: 
-  build and run:
+  basic:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
