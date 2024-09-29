@@ -14,6 +14,7 @@ jobs:
             build/main
             build/tests
   tests:
+    needs: [basic]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
@@ -21,7 +22,8 @@ jobs:
           name: binaries
       - run: chmod +x tests && ./tests
   main:
-    runs-on: ubuntu-latest
+    needs: [basic]
+    runs-on: ubuntu-latest    
     steps:
       - uses: actions/download-artifact@v4
         with: 
